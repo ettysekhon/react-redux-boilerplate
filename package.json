@@ -9,7 +9,7 @@
     "start": "node server --colors",
     "test": "npm run lint && npm run mocha && npm run karma",
     "test:watch": "npm run mocha:watch & npm run karma:watch",
-    "mocha": "mocha --compilers js:babel-core/register src/reducers --recursive",
+    "mocha": "mocha './src/**/*_spec.js' --compilers js:babel-core/register --recursive --require ./test.setup.js",
     "mocha:watch": "npm run mocha -- --watch",
     "karma": "NODE_ENV=production karma start karma.config.js",
     "karma:watch": "npm run karma -- --watch"
@@ -71,6 +71,7 @@
     "enzyme": "^1.4.1",
     "imports-loader": "^0.6.5",
     "isparta-loader": "^2.0.0",
+    "jsdom": "^8.0.2",
     "json-loader": "^0.5.4",
     "karma": "^0.13.19",
     "karma-chrome-launcher": "^0.2.2",
